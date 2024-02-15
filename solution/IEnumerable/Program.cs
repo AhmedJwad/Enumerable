@@ -41,3 +41,52 @@ for (int i = 0; i < product.Count; i++)
     Console.WriteLine(product[i]);
 }
 #endregion
+
+#region Dictionary
+Console.WriteLine("***Dictionar<TKey, TValue>***");
+var fruits=new Dictionary<string, int>();
+fruits.Add("manzana", 1);
+fruits.Add("banan", 2);
+
+if (fruits.ContainsKey("limon"))
+{
+    fruits["limon"] += 20;
+
+}
+else
+{
+    fruits.Add("lemones", 20);
+}
+foreach (var item in fruits)
+{
+    Console.WriteLine($"{item.Key}=> {item.Value}");
+
+}
+#endregion
+#region Dictionary2
+Console.WriteLine("***Dictionar<TKey, TValue>***");
+var products = new Dictionary<int, Product>()
+{
+    {1, new Product{Id=1,Name="LIMON", Price=45525} },
+    {2, new Product{Id=2,Name="kiwi", Price=5020} },
+    {3, new Product{Id=3,Name="banan", Price=2500} }
+};
+
+
+if (products.ContainsKey(5))
+{
+    products[5].Price += 1.10M;
+
+}
+else
+{
+   products.Add(5, new Product { Id=4, Name="Apple" , Price=2000});
+}
+foreach (var item in products)
+{
+    Console.WriteLine($"{item.Key}=> {item.Value}");
+
+}
+
+
+#endregion
