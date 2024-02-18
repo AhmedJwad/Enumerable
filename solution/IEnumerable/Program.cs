@@ -90,3 +90,32 @@ foreach (var item in products)
 
 
 #endregion
+
+#region LinkList
+Console.WriteLine("***LinkList<T>");
+var numbers=new LinkedList<int>();
+numbers.AddLast(10);
+numbers.AddLast(20);
+numbers.AddLast(30);
+numbers.AddLast(40);
+numbers.AddLast(50);
+numbers.AddLast(60);
+numbers.AddFirst(5);
+numbers.AddLast(65);
+var node30 = numbers.Find(30);
+numbers.AddAfter(node30!, 35);
+var node50 = numbers.Find(50);
+numbers.Remove(node50!);
+var pointer=numbers!.Last;
+while (pointer != null)
+{
+    Console.WriteLine(pointer.Value);
+    pointer = pointer.Previous;
+}
+
+foreach (var item in numbers)
+{
+    Console.WriteLine(item);
+}
+
+#endregion
