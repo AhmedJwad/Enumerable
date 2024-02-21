@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using IEnumerable;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("================");
 Console.WriteLine("IEnumerable");
@@ -122,16 +123,16 @@ Console.WriteLine("=============");
 
 
 #region Queue
-Console.WriteLine("****Queue<T>");
-var messages=new Queue<string>();
-messages.Enqueue("Hello");
-messages.Enqueue("hi");
-messages.Enqueue("welcome");
-messages.Enqueue("good morning");
-foreach (var item in messages)
-{
-    Console.WriteLine(item);
-}
+//Console.WriteLine("****Queue<T>");
+//var messages=new Queue<string>();
+//messages.Enqueue("Hello");
+//messages.Enqueue("hi");
+//messages.Enqueue("welcome");
+//messages.Enqueue("good morning");
+//foreach (var item in messages)
+//{
+//    Console.WriteLine(item);
+//}
 //var messagepeaked=messages.Peek();
 //Console.WriteLine($"Peaked{ messagepeaked}");
 //var messageDequeue=messages.Dequeue();
@@ -142,10 +143,38 @@ foreach (var item in messages)
 //{
 //    Console.WriteLine(item);
 //}
-Console.WriteLine("Dequeu proce=>");
-while(messages.Count > 0)
+//Console.WriteLine("Dequeu proce=>");
+//while(messages.Count > 0)
+//{
+//    var message=messages.Dequeue();
+//    Console.WriteLine(message);
+//}
+#endregion
+#region Stack 
+Console.WriteLine("***Stack<T>***");
+var numbers=new Stack<int>();
+var random=new Random();
+for (int i = 0; i < 10; i++)
 {
-    var message=messages.Dequeue();
-    Console.WriteLine(message);
+    numbers.Push(i);
+}
+
+for (int i = 0; i < 10; i++)
+{
+    Console.Write($"{numbers.ElementAt(i)}\t");
+}
+foreach (var item in numbers)
+{
+    Console.Write($"{item}\t");
+}
+var numberpeeked=numbers.Peek();
+Console.WriteLine($"Peeked...{numberpeeked}");
+var numberpoped=numbers.Pop();
+Console.WriteLine($"number poped....{numberpoped}");
+Console.WriteLine("pop process");
+while(numbers.Count > 0)
+{
+    var number=numbers.Pop();
+    Console.Write($"{number}\t");
 }
 #endregion
